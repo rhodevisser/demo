@@ -15,9 +15,15 @@
                 [
                 'name'=> 'Gossip Girl',
                 'onAir' => '2007 - 2012',
-                'Writer'=> 'Josh Schwartz',
+                'writer'=> 'Josh Schwartz',
                 'wikipediaLink' => 'https://en.wikipedia.org/wiki/Gossip_Girl'
                 ], 
+                [
+                'name'=> 'The OC',
+                'onAir' => '2003 - 2007',
+                'writer' => 'Josh Schwartz',
+                'wikipediaLink' => 'https://en.wikipedia.org/wiki/The_O.C.' 
+                ],
                 [
                 'name'=> 'Slicon Valley',
                 'onAir' => '2014 - 2019',
@@ -26,12 +32,27 @@
                 ],
                 [
                 'name' => 'True Blood',
-                'onAir' => '20008 - 2014',
+                'onAir' => '2008 - 2014',
                 'writer' => 'Alan Ball',
                 'wikipediaLink' => 'https://en.wikipedia.org/wiki/True_Blood'
                 ]
             ];
+
+            function filteredByWriter($tvshows, $writer) {
+                $filteredWriters = [];
+
+                foreach ($tvshows as $tvshow) {
+                    if ($tvshow['writer'] === $writer) {
+                        $filteredWriters[] = $tvshow;
+                    }
+                }
+
+                return $filteredWriters;
+
+            }
         ?>
+
+        
 
         <h1>
             <?= $title ?> 
@@ -39,15 +60,15 @@
         
 
         <ul>
-
-            <?php foreach ($tvshows as $tvshow) : ?>
-                <li>
-                    <a href="<?= $tvshow['wikipediaLink'] ?>" >
-                        <?= $tvshow['name']; ?> (<?= $tvshow['onAir']; ?>)
-                    </a> 
-                </li>      
+            <?php foreach (filteredByWriter($tvshows, 'Josh Schwartz') as $tvshow) : ?>
+                    <li>
+                        <a href="<?= $tvshow['wikipediaLink'] ?>" >
+                            <?= $tvshow['name']; ?> (<?= $tvshow['onAir']; ?>)
+                        </a> 
+                    </li>     
             <?php endforeach; ?>
         </ul>
+
 
     </body>
 

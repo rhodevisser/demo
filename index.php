@@ -3,18 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>My First PHP Calve</title>
+    <link rel="stylesheet" href="index.css"/>
 </head>
 <body>
 
-    <h1>
-        <?php 
-
-        $greeting = "Hello";
-
-            echo "$greeting World!";
-
-        ?>
-    </h1>
     
+        <?php 
+        $name = "Dark Matter";
+        $read = true; 
+
+        if ( $read ) {
+            $message = "I have read $name.";   
+        } else { 
+            $message = "I have NOT read $name.";
+        }
+        ?>
+
+        <h1>
+            <?= $message ?>
+        </h1>
+           
+
 </body>
 </html>

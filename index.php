@@ -38,18 +38,21 @@
                 ]
             ];
 
-            function filteredByWriter($tvshows, $writer) {
-                $filteredWriters = [];
+            function filter($items, $key, $value) {
 
-                foreach ($tvshows as $tvshow) {
-                    if ($tvshow['writer'] === $writer) {
-                        $filteredWriters[] = $tvshow;
+                $filteredItems = [];
+
+                foreach ($items as $item) {
+                    if ($item[$key] === $value) {
+                        $filteredItems[] = $item;
                     }
                 }
 
-                return $filteredWriters;
+                return $filteredItems;
 
             }
+
+            $filteredTvShows = filter($tvshows, 'writer', 'Mike Judge');
         ?>
 
         
@@ -60,7 +63,7 @@
         
 
         <ul>
-            <?php foreach (filteredByWriter($tvshows, 'Josh Schwartz') as $tvshow) : ?>
+            <?php foreach ($filteredTvShows as $tvshow) : ?>
                     <li>
                         <a href="<?= $tvshow['wikipediaLink'] ?>" >
                             <?= $tvshow['name']; ?> (<?= $tvshow['onAir']; ?>)

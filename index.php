@@ -38,12 +38,12 @@
                 ]
             ];
 
-            function filter($items, $key, $value) {
+            function filter($items, $fn) {
 
                 $filteredItems = [];
 
                 foreach ($items as $item) {
-                    if ($item[$key] === $value) {
+                    if ($fn($item)) {
                         $filteredItems[] = $item;
                     }
                 }
@@ -52,7 +52,9 @@
 
             }
 
-            $filteredTvShows = filter($tvshows, 'writer', 'Mike Judge');
+            $filteredTvShows = filter($tvshows, function($book) {
+                return $book['onAir'] > 2009;
+        });
         ?>
 
         

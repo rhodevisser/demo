@@ -38,22 +38,9 @@
                 ]
             ];
 
-            function filter($items, $fn) {
-
-                $filteredItems = [];
-
-                foreach ($items as $item) {
-                    if ($fn($item)) {
-                        $filteredItems[] = $item;
-                    }
-                }
-
-                return $filteredItems;
-
-            }
-
-            $filteredTvShows = filter($tvshows, function($book) {
-                return $book['onAir'] > 2009;
+            
+            $filteredTvShows = array_filter($tvshows, function($tvshow) {
+                return $tvshow['onAir'] > 2007;
         });
         ?>
 

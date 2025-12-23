@@ -33,4 +33,4 @@
             return $tvshow['onAir'] > 2007;
     });
 
-require "index.view.php";
+require "views/index.view.php";

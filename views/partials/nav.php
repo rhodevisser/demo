@@ -10,7 +10,7 @@
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
               <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-              <a href="index.php" aria-current="page" class="<?= $_SERVER['REQUEST_URI'] === '/laracast-websites/demo/index.php' ? 'bg-black 900 text-white' : 'text-gray-300'; ?>  rounded-md px-3 py-2 text-sm font-medium hover:bg-white/5 hover:text-white">Rhodé's Homepage</a>
+              <a href="index.php" aria-current="page" class="<?= urlIs('/laracast-websites/demo/index.php') ? 'bg-black 900 text-white' : 'text-gray-300'; ?>  rounded-md px-3 py-2 text-sm font-medium hover:bg-white/5 hover:text-white">Rhodé's Homepage</a>
               <a href="about.php" class="<?= $_SERVER['REQUEST_URI'] === '/laracast-websites/demo/about.php' ? 'bg-black 900 text-white' : 'text-gray-300'; ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">About moi</a>
               <a href="contact.php" class="<?= $_SERVER['REQUEST_URI'] === '/laracast-websites/demo/contact.php' ? 'bg-black 900 text-white' : 'text-gray-300'; ?> rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-white">Contact</a>
             </div>

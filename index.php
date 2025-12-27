@@ -17,6 +17,8 @@ if ($_SERVER['REQUEST_URI'] === '/laracast-websites/demo/index.php' ) {
     echo 'text-gray-300';
 }
 
+echo $_SERVER['REQUEST_URI'] === '/laracast-websites/demo/index.php' ? 'bg-black 900 text-white' : 'text-gray-300'; 
+
 
 
 require "views/index.view.php";

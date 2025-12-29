@@ -6,7 +6,9 @@ $uri = $_SERVER['REQUEST_URI'];
 
 if ($uri === '/') {
     require 'controllers/index.php';
-} else if ($uri === '/laracast-websites/demo/about') {
+} else if ($uri === '/about') {
     require 'controllers/about.php';
-} 
+} else {
+    require 'controllers/about.php';
+}
 

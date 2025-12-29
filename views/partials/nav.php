@@ -10,9 +10,9 @@
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
               <!-- Current: "bg-gray-950/50 text-white", Default: "text-gray-300 hover:bg-white/5 hover:text-white" -->
-              <a href="/laracast-websites/demo" aria-current="page" class="rounded-md px-3 py-2 text-sm font-medium <?php echo ($_SERVER['REQUEST_URI'] === '/laracast-websites/demo/') ? 'bg-gray-950/50 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white'; ?>">Rhodé's Homepage</a>
-              <a href="/laracast-websites/demo/about" class="rounded-md px-3 py-2 text-sm font-medium <?php echo ($_SERVER['REQUEST_URI'] === '/laracast-websites/demo/about') ? 'bg-gray-950/50 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white'; ?>">About moi</a>
-              <a href="/laracast-websites/demo/contact" class="rounded-md px-3 py-2 text-sm font-medium <?php echo ($_SERVER['REQUEST_URI'] === '/laracast-websites/demo/contact.php') ? 'bg-gray-950/50 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white'; ?>">Contact</a>
+              <a href="/" aria-current="page" class="rounded-md px-3 py-2 text-sm font-medium <?php echo ($_SERVER['REQUEST_URI'] === '/') ? 'bg-gray-950/50 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white'; ?>">Rhodé's Homepage</a>
+              <a href="/about" class="rounded-md px-3 py-2 text-sm font-medium <?php echo ($_SERVER['REQUEST_URI'] === '/about') ? 'bg-gray-950/50 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white'; ?>">About moi</a>
+              <a href="/contact" class="rounded-md px-3 py-2 text-sm font-medium <?php echo ($_SERVER['REQUEST_URI'] === '/contact') ? 'bg-gray-950/50 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white'; ?>">Contact</a>
             </div>
           </div>
 

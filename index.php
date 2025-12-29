@@ -18,8 +18,10 @@ function abort($code = 404) {
     die();
 }
 
-if (array_key_exists($uri, $routes)) {
-    require $routes[$uri];
-} else {
-   abort(); 
+function routeToController() {
+    if (array_key_exists($uri, $routes)) {
+        require $routes[$uri];
+    } else {
+    abort(); 
+    }
 }

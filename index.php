@@ -10,7 +10,7 @@ class Person {
     public $age;
 
     public function breathe() {
-        echo "breathing";
+        echo $this->name . ' is breathing!';
     }
 }
 
@@ -19,4 +19,4 @@ $person = new Person();
 $person->name = 'John Doe'; 
 $person->age = 25;
 
-dumbDie($person->age);
+$person->breathe();

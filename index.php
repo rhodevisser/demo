@@ -5,16 +5,22 @@ require 'functions.php';
 
 // Connect to the database, and execute a query. 
 class Database {
+
+    public $connection;
+
     public function __construct()
     {
+
         $dsn = "mysql:host=localhost;port=3306;user=root;dbname=mydemoapp;utf8mb4";
-        $pdo = new PDO($dsn);
+
+        $this->connection = new PDO($dsn);
+
     }
 
 
     public function query($query)
     {
-        $statement = $pdo->prepare($query);
+        $statement = $this->connection->prepare($query);
         $statement->execute();
 
         return $statement->fetchAll(PDO::FETCH_ASSOC);

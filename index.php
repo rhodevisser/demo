@@ -23,7 +23,7 @@ class Database {
         $statement = $this->connection->prepare($query);
         $statement->execute();
 
-        return $statement->fetchAll(PDO::FETCH_ASSOC);
+        return $statement;
 
     }
 
@@ -31,14 +31,10 @@ class Database {
 
 $db = new Database();
 
-$posts = $db->query("select * from posts");
+$post = $db->query("select * from posts where id = 2")->fetch(PDO::FETCH_ASSOC);
+
+dumbDie($post['title']);
 
 
 
-// connect to mySQL database. 
-
-
-foreach ($posts as $post) {
-        echo "<li>" .$post['title'] ."</li>";
-}
 

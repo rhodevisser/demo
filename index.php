@@ -4,9 +4,11 @@ require 'functions.php';
 require 'Database.php';
 //require 'router.php';
 
-$db = new Database();
+$config = require('config.php');
 
-$post = $db->query("select * from posts where id = 2")->fetch(PDO::FETCH_ASSOC);
+$db = new Database($config['database']);
+
+$post = $db->query("select * from posts where id = 2")->fetch();
 
 dumbDie($post['title']);
 

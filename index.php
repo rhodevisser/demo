@@ -8,9 +8,11 @@ $config = require('config.php');
 
 $db = new Database($config['database']);
 
-$post = $db->query("select * from posts where id = 2")->fetch();
+$id = $_GET['id'];
 
-dumbDie($post['title']);
+$post = $db->query("select * from posts where id = {$id}")->fetch();
+
+dumbDie($post);
 
 
 
